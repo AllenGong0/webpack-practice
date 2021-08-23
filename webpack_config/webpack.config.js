@@ -2,15 +2,18 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack')
+const keysTransformer = require('ts-transformer-keys/transformer').default;
+
 
 module.exports = {
   // entry: {
   //   app:'./src/index.js',
   // },
-  entry: './src/index.js',
+  mode: 'development',
+  entry: './src/index.ts',
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname,'dist')
+    path: path.resolve(__dirname,'../dist')
   },
   devServer: {
     contentBase: './dist',
@@ -20,7 +23,6 @@ module.exports = {
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
-  devtool: 'inline-source-map',
   plugins: [
     // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -48,10 +50,16 @@ module.exports = {
         ]
       },
       {
-        //加载ts
         test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        loader: 'ts-loader', // or 'awesome-typescript-loader'
+        options: {
+          // make sure not to set `transpileOnly: true` here, otherwise it will not work
+          getCustomTransformers: program => ({
+              before: [
+                  keysTransformer(program)
+              ]
+          })
+        }
       }
     ]
   }

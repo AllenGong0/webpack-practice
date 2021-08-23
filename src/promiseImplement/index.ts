@@ -1,0 +1,2 @@
+// import './simpleDemo'
+import './function'
