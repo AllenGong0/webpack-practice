@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack')
 const keysTransformer = require('ts-transformer-keys/transformer').default;
-
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
   // entry: {
@@ -13,12 +13,15 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname,'../dist')
+    path: path.resolve(__dirname,'../dist'),
+    publicPath: '/'
   },
   devServer: {
     contentBase: './dist',
     port: 9000,
-    hot: true
+    hot: true,
+    stats: 'errors-only',
+    overlay: true, // 编译出现错误时，将错误直接显示在页面上
   },
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ]
@@ -32,7 +35,13 @@ module.exports = {
 
     //热更新
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new FriendlyErrorsWebpackPlugin({
+      compilationSuccessInfo: {
+          messages: [`Your application is running here: 9000`],
+      },
+      clearConsole: true,
+    })
   ],
   module: {
     rules: [

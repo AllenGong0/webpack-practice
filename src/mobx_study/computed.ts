@@ -24,6 +24,8 @@ class Foo {
         },1000)
     }
 
+    observeDispose!: any
+
     @observable length = 2;
     @computed get squared() {
         return this.length * this.length;
