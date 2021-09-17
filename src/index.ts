@@ -8,7 +8,7 @@
 // import './extend/demo1'
 
 // import './getInterfaceKey';
-import './mobx_study';
+// import './mobx_study';
 // union to intersection of functions
 
 // import './test';
@@ -24,3 +24,7 @@ import './mobx_study';
 // import './leetcode'
 
 // import './dom'
+
+import './proxy'
+// import './drag'
+// import './class'

@@ -229,3 +229,24 @@ function isInViewPortOfOne (el) {
 //   Object.assign(a,{b:1})
 //   console.log(a)
 // }
+
+
+function reg(){
+  const str = `http://tutor-inroom-pub-test.oss-cn-beijing.aliyuncs.com/common/139745095/195419350/17ba6a282fc6319.jpg`
+  const reg = /common(.*)/
+  str.match(reg)
+}
+
+
+async function test1() {
+  await test2()
+  console.error('11111111')
+}
+
+async function test2(){
+  await new Promise(()=>{
+
+  })
+}
+
+test1()

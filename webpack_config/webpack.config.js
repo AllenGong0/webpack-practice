@@ -10,6 +10,7 @@ module.exports = {
   //   app:'./src/index.js',
   // },
   mode: 'development',
+  devtool: 'source-map',
   entry: './src/index.ts',
   output: {
     filename: '[name].bundle.js',
@@ -38,7 +39,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-          messages: [`Your application is running here: 9000`],
+          messages: [`Your application is running: http://localhost:9000/`],
       },
       clearConsole: true,
     })
