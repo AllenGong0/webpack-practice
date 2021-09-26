@@ -1,2 +1,2 @@
-// import './demo1'
-import './testArray'
+import './demo1'
+// import './testArray'
