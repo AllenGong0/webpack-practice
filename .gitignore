@@ -2,3 +2,4 @@ node_modules
 **/dist/
 **./vue/vue-2.6/
 **.zip
+.DS_Store
