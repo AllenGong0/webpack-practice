@@ -31,3 +31,5 @@
 // import './subejct'
 
 // import './esModule'
+
+import './loadAssets'

@@ -1,0 +1,13 @@
+body{
+    background-color: aquamarine;
+}
+.img2{
+    background: url(./../../img/Snipaste_2021-10-20_16-58-02.png);
+    width: 300px;
+    height: 200px;
+}
+/* #drag{
+    background: green;
+    height: 300px;
+    width: 400px;
+} */
