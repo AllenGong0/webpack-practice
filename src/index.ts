@@ -25,7 +25,9 @@
 
 // import './dom'
 
-import './proxy'
+// import './proxy'
 // import './drag'
 // import './class'
 // import './subejct'
+
+// import './esModule'
