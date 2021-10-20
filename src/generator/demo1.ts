@@ -19,7 +19,6 @@ function callGenTest(){
 callGenTest()
 
 
-
 function* iterArr(arr){
     if( Array.isArray(arr)){
         for (let index = 0; index < arr.length; index++) {
